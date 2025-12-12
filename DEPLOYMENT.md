@@ -222,23 +222,23 @@ az ad sp create-for-rbac --name "food-video-github" \
 ```bash
 # Create Azure Container Registry
 az acr create \
-  --name foodvideoregistry \
+  --name recipetokregistry \
   --resource-group food-video-rg \
   --sku Basic \
   --admin-enabled true
 
 # Login to ACR
-az acr login --name foodvideoregistry
+az acr login --name recipetokregistry
 
 # Build and push image
-az acr build --registry foodvideoregistry --image food-video-api:latest .
+az acr build --registry recipetokregistry --image food-video-api:latest .
 
 # Update App Service to use container
 az webapp config container set \
   --name food-video-api \
   --resource-group food-video-rg \
-  --docker-custom-image-name foodvideoregistry.azurecr.io/food-video-api:latest \
-  --docker-registry-server-url https://foodvideoregistry.azurecr.io
+  --docker-custom-image-name recipetokregistry.azurecr.io/food-video-api:latest \
+  --docker-registry-server-url https://recipetokregistry.azurecr.io
 ```
 
 #### Or use Docker Hub

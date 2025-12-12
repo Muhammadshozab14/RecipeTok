@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VideoShare - Share Your Videos",
+  title: "RecipeTok - Share Your Videos",
   description: "A platform for sharing videos with recipes",
 };
 
